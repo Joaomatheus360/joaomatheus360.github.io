@@ -1,0 +1,79 @@
+/*
+  ================================================================
+  Arquivo: style.css
+  Descrição: Estilos e variáveis personalizáveis para o portfólio.
+  ================================================================
+*/
+
+/* DEFINIÇÃO DAS VARIÁVEIS DE ESTILO
+  :root -> Variáveis para o tema claro (padrão)
+  html.dark -> Variáveis para o tema escuro
+*/
+
+:root {
+  /* Cores Principais */
+  --cor-primaria: #2563eb; /* Azul padrão do botão e links */
+  --cor-primaria-hover: #1d4ed8; /* Azul mais escuro para hover */
+
+  /* Cores de Fundo */
+  --fundo-principal: #f9fafb;  /* Fundo da página (cinza bem claro) */
+  --fundo-secundario: #ffffff; /* Fundo dos cards e header (branco) */
+  --fundo-botao-secundario: #e5e7eb; /* Fundo do botão "Baixar CV" */
+  --fundo-botao-secundario-hover: #d1d5db;
+
+  /* Cores de Texto */
+  --texto-principal: #1f2937;    /* Texto principal (cinza escuro) */
+  --texto-secundario: #4b5563; /* Texto de parágrafos (cinza médio) */
+  --texto-botao-primario: #ffffff; /* Texto do botão azul */
+  --texto-botao-secundario: #1f2937; /* Texto do botão "Baixar CV" */
+
+  /* Cores das Tags de Projeto */
+  --tag-fundo-1: #dbeafe;
+  --tag-texto-1: #1e40af;
+  --tag-fundo-2: #dcfce7;
+  --tag-texto-2: #166534;
+
+  /* Outros */
+  --cor-borda: #e5e7eb;
+}
+
+html.dark {
+  /* Cores Principais */
+  --cor-primaria: #3b82f6; /* Azul um pouco mais claro para contraste no escuro */
+  --cor-primaria-hover: #60a5fa;
+
+  /* Cores de Fundo */
+  --fundo-principal: #111827;  /* Fundo da página (cinza bem escuro) */
+  --fundo-secundario: #1f2937; /* Fundo dos cards e header (cinza escuro) */
+  --fundo-botao-secundario: #374151;
+  --fundo-botao-secundario-hover: #1e40af;
+
+  /* Cores de Texto */
+  --texto-principal: #f9fafb;    /* Texto principal (quase branco) */
+  --texto-secundario: #d1d5db; /* Texto de parágrafos (cinza claro) */
+  --texto-botao-primario: #ffffff;
+  --texto-botao-secundario: #f9fafb;
+
+  /* Cores das Tags de Projeto */
+  --tag-fundo-1: #1e3a8a;
+  --tag-texto-1: #bfdbfe;
+  --tag-fundo-2: #14532d;
+  --tag-texto-2: #bbf7d0;
+
+  /* Outros */
+  --cor-borda: #374151;
+}
+
+
+/* Estilos Globais e Transições */
+body {
+  /* Define a cor de fundo e de texto padrão usando as variáveis */
+  background-color: var(--fundo-principal);
+  color: var(--texto-principal);
+  font-family: sans-serif; /* Você pode mudar a fonte aqui. Ex: 'Roboto', sans-serif */
+}
+
+/* Transição suave para a troca de tema */
+* {
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
