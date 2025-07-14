@@ -1,14 +1,3 @@
-/*
-  ================================================================
-  Arquivo: style.css
-  Descrição: Estilos e variáveis personalizáveis para o portfólio.
-  ================================================================
-*/
-
-/* DEFINIÇÃO DAS VARIÁVEIS DE ESTILO
-  :root -> Variáveis para o tema claro (padrão)
-  html.dark -> Variáveis para o tema escuro
-*/
 
 :root {
   /* Cores Principais */
