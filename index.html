@@ -191,6 +191,7 @@
 
     <script>
         <script>
+    <script>
     const translations = {
         pt: {
             nav_projects: "Projetos",
@@ -282,12 +283,11 @@
         const cvLink = document.getElementById('cv-download-link');
         if (lang === 'en') {
             // Se o idioma for inglês, aponta para o CV em inglês
-            cvLink.href = 'assets/CV-EN.pdf'; 
+            cvLink.href = 'assets/CV-EN.pdf'; // Lembre-se de usar o nome correto do seu arquivo
         } else {
-            
+            // Caso contrário, aponta para o CV em português
             cvLink.href = 'assets/Moderno-Atualizado.pdf';
         }
-        // --- FIM DA NOVA PARTE ---
 
         document.getElementById('btn-pt').classList.toggle('active', lang === 'pt');
         document.getElementById('btn-en').classList.toggle('active', lang === 'en');
