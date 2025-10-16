@@ -7,6 +7,13 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilo para o botão de idioma ativo */
+        .lang-btn.active {
+            color: var(--cor-primaria);
+            font-weight: bold;
+        }
+    </style>
     <script>
         // Lógica para o Dark Mode (permanece igual)
         const themeToggle = () => {
@@ -35,8 +42,15 @@
         <nav class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="text-xl font-bold">HOME</a>
             <div class="flex items-center space-x-6">
-                <a href="#projects" class="hover:text-[var(--cor-primaria)]">Projetos</a>
-                <a href="#contact" class="hover:text-[var(--cor-primaria)]">Contato</a>
+                <a href="#projects" class="hover:text-[var(--cor-primaria)]" data-translate-key="nav_projects">Projetos</a>
+                <a href="#contact" class="hover:text-[var(--cor-primaria)]" data-translate-key="nav_contact">Contato</a>
+                
+                <div class="flex items-center space-x-2 border-l border-gray-500 pl-4">
+                     <button onclick="setLanguage('pt')" class="lang-btn" id="btn-pt">PT</button>
+                     <span class="text-gray-400">/</span>
+                     <button onclick="setLanguage('en')" class="lang-btn" id="btn-en">EN</button>
+                </div>
+                
                 <button onclick="toggleTheme()" class="focus:outline-none" aria-label="Alternar tema">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
@@ -55,107 +69,108 @@
                 <img src="assets/minha-foto.png" alt="Foto de João Matheus" class="rounded-full object-cover w-full h-full shadow-lg">
             </div>
             <div class="text-center md:text-left">
-                <h1 class="text-4xl md:text-5xl font-bold mb-2">Olá, sou o João Matheus!</h1>
-                <p class="text-xl text-[var(--cor-primaria)] font-medium mb-4">Cientista da Computação </p>
-                <p class="text-lg text-[var(--texto-secundario)] max-w-2xl">
+                <h1 class="text-4xl md:text-5xl font-bold mb-2" data-translate-key="hero_greeting">Olá, sou o João Matheus!</h1>
+                <p class="text-xl text-[var(--cor-primaria)] font-medium mb-4" data-translate-key="hero_job_title">Cientista da Computação</p>
+                <p class="text-lg text-[var(--texto-secundario)] max-w-2xl" data-translate-key="hero_bio">
                     Sou recém-formado em Ciências da Computação, apaixonado por tecnologia e resolução de problemas. Busco uma oportunidade que me permita aplicar meus conhecimentos em desenvolvimento de software e análise de dados, ao mesmo tempo em que continuo me aprimorando por meio de experiências práticas.
                 </p>
                  <div class="mt-6 flex justify-center md:justify-start space-x-3">
-                    <a href="assets/Moderno-Atualizado.pdf" download class="px-6 py-3 bg-[var(--cor-primaria)] text-[var(--texto-botao-primario)] rounded-md hover:bg-[var(--cor-primaria-hover)] shadow-lg">Baixar CV</a>
-                </div>
+                     <a href="assets/Moderno-Atualizado.pdf" download class="px-6 py-3 bg-[var(--cor-primaria)] text-[var(--texto-botao-primario)] rounded-md hover:bg-[var(--cor-primaria-hover)] shadow-lg" data-translate-key="hero_button_cv">Baixar CV</a>
+                 </div>
             </div>
         </section>
 
         <section id="skills">
-            <h2 class="text-3xl font-bold text-center mb-12">Principais Competências</h2>
+            <h2 class="text-3xl font-bold text-center mb-12" data-translate-key="skills_title">Principais Competências</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
                 <div class="bg-[var(--fundo-secundario)] p-6 rounded-lg shadow-lg border border-[var(--cor-borda)]">
                     <i class="fas fa-chart-pie fa-2x text-[var(--cor-primaria)] mb-4"></i>
-                    <h3 class="text-xl font-bold mb-2">Análise de Dados</h3>
-                    <p class="text-[var(--texto-secundario)]">Power BI, DAX, Excel, SQL, Extração e Visualização de Dados.</p>
+                    <h3 class="text-xl font-bold mb-2" data-translate-key="skills_data_analysis_title">Análise de Dados</h3>
+                    <p class="text-[var(--texto-secundario)]" data-translate-key="skills_data_analysis_desc">Power BI, DAX, Excel, SQL, Extração e Visualização de Dados.</p>
                 </div>
                 <div class="bg-[var(--fundo-secundario)] p-6 rounded-lg shadow-lg border border-[var(--cor-borda)]">
                     <i class="fas fa-code fa-2x text-[var(--cor-primaria)] mb-4"></i>
-                    <h3 class="text-xl font-bold mb-2">Linguagens & Ferramentas</h3>
-                    <p class="text-[var(--texto-secundario)]">Python, C, C# e Java.</p>
+                    <h3 class="text-xl font-bold mb-2" data-translate-key="skills_languages_title">Linguagens & Ferramentas</h3>
+                    <p class="text-[var(--texto-secundario)]" data-translate-key="skills_languages_desc">Python, C, C# e Java.</p>
                 </div>
             </div>
         </section>
+
         <section id="experience">
-            <h2 class="text-3xl font-bold text-center mb-12">Formação e Experiência</h2>
+            <h2 class="text-3xl font-bold text-center mb-12" data-translate-key="experience_title">Formação e Experiência</h2>
             <div class="max-w-3xl mx-auto border-l-2 border-[var(--cor-primaria)] pl-8 space-y-12">
                 <div class="relative">
                     <div class="absolute -left-10 h-5 w-5 bg-[var(--cor-primaria)] rounded-full border-4 border-[var(--fundo-secundario)]"></div>
-                    <h3 class="text-xl font-bold">Ciências da Computação</h3>
-                    <p class="font-medium text-[var(--texto-secundario)]">Universidade Cátolica de Santos [Unisantos]</p>
+                    <h3 class="text-xl font-bold" data-translate-key="education_degree">Ciências da Computação</h3>
+                    <p class="font-medium text-[var(--texto-secundario)]" data-translate-key="education_university">Universidade Cátolica de Santos [Unisantos]</p>
                     <p class="mt-2 text-[var(--texto-secundario)]">
-                    <p class="mt-2 text-[var(--texto-secundario)]">
-                        Graduação concluída em junho 2025</p>
-                        Projeto Científico - Estudante Pesquisador focado em Análise de Dados. </p>
+                         <span data-translate-key="education_completed">Graduação concluída em junho 2025</span><br>
+                         <span data-translate-key="education_research">Projeto Científico - Estudante Pesquisador focado em Análise de Dados.</span>
+                    </p>
                 </div>
-                
+               
                 <div class="relative">
                     <div class="absolute -left-10 h-5 w-5 bg-[var(--cor-primaria)] rounded-full border-4 border-[var(--fundo-secundario)]"></div>
-                    <p class="text-sm text-[var(--texto-secundario)]"> Fevereiro 2019 - Março 2025</p>
-                    <h3 class="text-xl font-bold">Assistente de Sistemas de informação </h3>
-                    <p class="font-medium text-[var(--texto-secundario)]">MSC Mediterranean Shipping do Brasil</p>
-                    <p class="mt-2 text-[var(--texto-secundario)]"></p>
+                    <p class="text-sm text-[var(--texto-secundario)]" data-translate-key="work_date"> Fevereiro 2019 - Março 2025</p>
+                    <h3 class="text-xl font-bold" data-translate-key="work_role">Assistente de Sistemas de informação</h3>
+                    <p class="font-medium text-[var(--texto-secundario)]" data-translate-key="work_company">MSC Mediterranean Shipping do Brasil</p>
                     <ul class="list-disc list-inside mt-2 text-[var(--texto-secundario)]">
-                        <li>Time França - Exportação França .</li>
-                        <li> Confecção, Auditoria e Correção de BL (Bill of Lading).</li>
-                        <li>Desenvolvimento de Relatórios e análise de erros.</li>
-                     
+                        <li data-translate-key="work_desc_1">Time França - Exportação França.</li>
+                        <li data-translate-key="work_desc_2">Confecção, Auditoria e Correção de BL (Bill of Lading).</li>
+                        <li data-translate-key="work_desc_3">Desenvolvimento de Relatórios e análise de erros.</li>
                     </ul>
                 </div>
-                 </div>
-     <section id="projects">
-    <h2 class="text-3xl font-bold text-center mb-12">Meus Projetos</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            </div>
+        </section>
         
-        <div class="bg-[var(--fundo-secundario)] p-6 rounded-lg shadow-lg border border-[var(--cor-borda)]">
-            <h3 class="text-2xl font-bold mb-3">DevOps - Automação de Deploy com Docker e Google Cloud</h3>
-            <p class="mb-4 text-[var(--texto-secundario)]">Responsável por criar e configurar uma <strong>pipeline de deploy</strong> para uma aplicação Python. O projeto envolveu a criação de um <strong>Dockerfile otimizado</strong> e a automação do ciclo de <strong>CI/CD</strong> com <strong>GitHub Actions</strong> para implantação na plataforma serverless <strong>Google Cloud Run</strong>, demonstrando habilidades práticas em <strong>conteinerização</strong>, <strong>automação</strong> e <strong>computação em nuvem</strong>.</p>
-            <div class="flex flex-wrap gap-2 mb-4">
-                <span class="bg-[var(--tag-fundo-1)] text-[var(--tag-texto-1)] text-sm font-medium px-2.5 py-0.5 rounded">Python</span>
-                <span class="bg-[var(--tag-fundo-1)] text-[var(--tag-texto-1)] text-sm font-medium px-2.5 py-0.5 rounded">Docker</span>
-                <span class="bg-[var(--tag-fundo-1)] text-[var(--tag-texto-1)] text-sm font-medium px-2.5 py-0.5 rounded">CI/CD</span>
-                <span class="bg-[var(--tag-fundo-1)] text-[var(--tag-texto-1)] text-sm font-medium px-2.5 py-0.5 rounded">Google Cloud</span>
-            </div>
-            <a href="https://github.com/Joaomatheus360/imersao-devops-api" target="_blank" class="font-semibold text-[var(--cor-primaria)] hover:text-[var(--cor-primaria-hover)] hover:underline">Ver no GitHub &rarr;</a>
-        </div>
+        <section id="projects">
+            <h2 class="text-3xl font-bold text-center mb-12" data-translate-key="projects_title">Meus Projetos</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+               
+                <div class="bg-[var(--fundo-secundario)] p-6 rounded-lg shadow-lg border border-[var(--cor-borda)]">
+                    <h3 class="text-2xl font-bold mb-3" data-translate-key="project1_title">DevOps - Automação de Deploy com Docker e Google Cloud</h3>
+                    <p class="mb-4 text-[var(--texto-secundario)]" data-translate-key="project1_desc">Responsável por criar e configurar uma <strong>pipeline de deploy</strong> para uma aplicação Python. O projeto envolveu a criação de um <strong>Dockerfile otimizado</strong> e a automação do ciclo de <strong>CI/CD</strong> com <strong>GitHub Actions</strong> para implantação na plataforma serverless <strong>Google Cloud Run</strong>, demonstrando habilidades práticas em <strong>conteinerização</strong>, <strong>automação</strong> e <strong>computação em nuvem</strong>.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-[var(--tag-fundo-1)] text-[var(--tag-texto-1)] text-sm font-medium px-2.5 py-0.5 rounded">Python</span>
+                        <span class="bg-[var(--tag-fundo-1)] text-[var(--tag-texto-1)] text-sm font-medium px-2.5 py-0.5 rounded">Docker</span>
+                        <span class="bg-[var(--tag-fundo-1)] text-[var(--tag-texto-1)] text-sm font-medium px-2.5 py-0.5 rounded">CI/CD</span>
+                        <span class="bg-[var(--tag-fundo-1)] text-[var(--tag-texto-1)] text-sm font-medium px-2.5 py-0.5 rounded">Google Cloud</span>
+                    </div>
+                    <a href="https://github.com/Joaomatheus360/imersao-devops-api" target="_blank" class="font-semibold text-[var(--cor-primaria)] hover:text-[var(--cor-primaria-hover)] hover:underline" data-translate-key="view_github">Ver no GitHub &rarr;</a>
+                </div>
 
-        <div class="bg-[var(--fundo-secundario)] p-6 rounded-lg shadow-lg border border-[var(--cor-borda)]">
-            <h3 class="text-2xl font-bold mb-3">Análise de Padrões e Tendência da Indústria de Jogos</h3>
-            <p class="mb-4 text-[var(--texto-secundario)]">
-                Este projeto de <strong>Processamento de Linguagem Natural (NLP)</strong> e <strong>Machine Learning</strong> teve como objetivo analisar e identificar padrões nos resumos de jogos da plataforma <strong>Metacritic</strong>. Utilizando técnicas como <strong>TF-IDF</strong> para vetorização de texto e o algoritmo <strong>K-means</strong> para clusterização, o estudo agrupou jogos com base em semelhanças linguísticas, revelando uma forte correlação entre a linguagem dos resumos e os gêneros dos jogos. A análise final demonstrou como descrições estrategicamente elaboradas podem impactar positivamente a percepção crítica e o desempenho comercial dos títulos.
-            </p>
-            <div class="flex flex-wrap gap-2 mb-4">
-                <span class="bg-[var(--tag-fundo-1)] text-[var(--tag-texto-1)] text-sm font-medium px-2.5 py-0.5 rounded">Python</span>
-                <span class="bg-[var(--tag-fundo-1)] text-[var(--tag-texto-1)] text-sm font-medium px-2.5 py-0.5 rounded">Machine Learning</span>
-                <span class="bg-[var(--tag-fundo-1)] text-[var(--tag-texto-1)] text-sm font-medium px-2.5 py-0.5 rounded">NLP</span>
-                <span class="bg-[var(--tag-fundo-1)] text-[var(--tag-texto-1)] text-sm font-medium px-2.5 py-0.5 rounded">K-means</span>
-            </div>
-            <a href="assets/Relatório de Pesquisa EP.pdf" target="_blank" class="font-semibold text-[var(--cor-primaria)] hover:text-[var(--cor-primaria-hover)] hover:underline">Ver Relatório Completo &rarr;</a>
-        </div>
+                <div class="bg-[var(--fundo-secundario)] p-6 rounded-lg shadow-lg border border-[var(--cor-borda)]">
+                    <h3 class="text-2xl font-bold mb-3" data-translate-key="project2_title">Análise de Padrões e Tendência da Indústria de Jogos</h3>
+                    <p class="mb-4 text-[var(--texto-secundario)]" data-translate-key="project2_desc">
+                        Este projeto de <strong>Processamento de Linguagem Natural (NLP)</strong> e <strong>Machine Learning</strong> teve como objetivo analisar e identificar padrões nos resumos de jogos da plataforma <strong>Metacritic</strong>. Utilizando técnicas como <strong>TF-IDF</strong> para vetorização de texto e o algoritmo <strong>K-means</strong> para clusterização, o estudo agrupou jogos com base em semelhanças linguísticas, revelando uma forte correlação entre a linguagem dos resumos e os gêneros dos jogos. A análise final demonstrou como descrições estrategicamente elaboradas podem impactar positivamente a percepção crítica e o desempenho comercial dos títulos.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-[var(--tag-fundo-1)] text-[var(--tag-texto-1)] text-sm font-medium px-2.5 py-0.5 rounded">Python</span>
+                        <span class="bg-[var(--tag-fundo-1)] text-[var(--tag-texto-1)] text-sm font-medium px-2.5 py-0.5 rounded">Machine Learning</span>
+                        <span class="bg-[var(--tag-fundo-1)] text-[var(--tag-texto-1)] text-sm font-medium px-2.5 py-0.5 rounded">NLP</span>
+                        <span class="bg-[var(--tag-fundo-1)] text-[var(--tag-texto-1)] text-sm font-medium px-2.5 py-0.5 rounded">K-means</span>
+                    </div>
+                    <a href="assets/Relatório de Pesquisa EP.pdf" target="_blank" class="font-semibold text-[var(--cor-primaria)] hover:text-[var(--cor-primaria-hover)] hover:underline" data-translate-key="view_report">Ver Relatório Completo &rarr;</a>
+                </div>
 
-        <div class="bg-[var(--fundo-secundario)] p-6 rounded-lg shadow-lg border border-[var(--cor-borda)]">
-            <h3 class="text-2xl font-bold mb-3">Análise de Dados Netflix</h3>
-            <p class="mb-4 text-[var(--texto-secundario)]">Dashboard interativo para análise do catálogo da Netflix, desenvolvido com <strong>Power BI</strong>. O painel explora gêneros, tendências e distribuição de títulos ao longo do tempo.</p>
-            <div class="flex flex-wrap gap-2 mb-4">
-                <span class="bg-[var(--tag-fundo-2)] text-[var(--tag-texto-2)] text-sm font-medium px-2.5 py-0.5 rounded">Power BI</span>
-                <span class="bg-[var(--tag-fundo-2)] text-[var(--tag-texto-2)] text-sm font-medium px-2.5 py-0.5 rounded">Análise de Dados</span>
-                <span class="bg-[var(--tag-fundo-2)] text-[var(--tag-texto-2)] text-sm font-medium px-2.5 py-0.5 rounded">DAX</span>
-                <span class="bg-[var(--tag-fundo-2)] text-[var(--tag-texto-2)] text-sm font-medium px-2.5 py-0.5 rounded">EXCEL</span>
+                <div class="bg-[var(--fundo-secundario)] p-6 rounded-lg shadow-lg border border-[var(--cor-borda)]">
+                    <h3 class="text-2xl font-bold mb-3" data-translate-key="project3_title">Análise de Dados Netflix</h3>
+                    <p class="mb-4 text-[var(--texto-secundario)]" data-translate-key="project3_desc">Dashboard interativo para análise do catálogo da Netflix, desenvolvido com <strong>Power BI</strong>. O painel explora gêneros, tendências e distribuição de títulos ao longo do tempo.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-[var(--tag-fundo-2)] text-[var(--tag-texto-2)] text-sm font-medium px-2.5 py-0.5 rounded">Power BI</span>
+                        <span class="bg-[var(--tag-fundo-2)] text-[var(--tag-texto-2)] text-sm font-medium px-2.5 py-0.5 rounded">Análise de Dados</span>
+                        <span class="bg-[var(--tag-fundo-2)] text-[var(--tag-texto-2)] text-sm font-medium px-2.5 py-0.5 rounded">DAX</span>
+                        <span class="bg-[var(--tag-fundo-2)] text-[var(--tag-texto-2)] text-sm font-medium px-2.5 py-0.5 rounded">EXCEL</span>
+                    </div>
+                    <a href="assets/NetflixFinal.pbix" target="_blank" class="font-semibold text-[var(--cor-primaria)] hover:text-[var(--cor-primaria-hover)] hover:underline" data-translate-key="view_dashboard">Ver Dashboard &rarr;</a>
+                </div>
+               
             </div>
-            <a href="assets/NetflixFinal.pbix" target="_blank" class="font-semibold text-[var(--cor-primaria)] hover:text-[var(--cor-primaria-hover)] hover:underline">Ver Dashboard &rarr;</a>
-        </div>
-        
-    </div>
-</section>
+        </section>
 
         <section id="contact" class="text-center">
-            <h2 class="text-3xl font-bold mb-4">Vamos Conversar!</h2>
-            <p class="text-lg text-[var(--texto-secundario)] mb-8">Estou aberto a novas oportunidades e adoro trocar ideias. <br>Sinta-se à vontade para entrar em contato.</p>
+            <h2 class="text-3xl font-bold mb-4" data-translate-key="contact_title">Vamos Conversar!</h2>
+            <p class="text-lg text-[var(--texto-secundario)] mb-8" data-translate-key="contact_subtitle">Estou aberto a novas oportunidades e adoro trocar ideias. <br>Sinta-se à vontade para entrar em contato.</p>
             <div class="flex justify-center items-center space-x-6 text-[var(--texto-secundario)]">
                 <a href="mailto:joao_matheus360@hotmail.com" class="hover:text-[var(--cor-primaria)]">
                     <i class="fas fa-envelope fa-2x"></i>
@@ -171,8 +186,115 @@
     </main>
 
     <footer class="text-center py-6 border-t border-[var(--cor-borda)] mt-12 text-sm text-[var(--texto-secundario)]">
-        <p>Desenvolvido por João Matheus. © 2025 </p>
+        <p data-translate-key="footer_text">Desenvolvido por João Matheus. © 2025</p>
     </footer>
 
+    <script>
+        const translations = {
+            pt: {
+                nav_projects: "Projetos",
+                nav_contact: "Contato",
+                hero_greeting: "Olá, sou o João Matheus!",
+                hero_job_title: "Cientista da Computação",
+                hero_bio: "Sou recém-formado em Ciências da Computação, apaixonado por tecnologia e resolução de problemas. Busco uma oportunidade que me permita aplicar meus conhecimentos em desenvolvimento de software e análise de dados, ao mesmo tempo em que continuo me aprimorando por meio de experiências práticas.",
+                hero_button_cv: "Baixar CV",
+                skills_title: "Principais Competências",
+                skills_data_analysis_title: "Análise de Dados",
+                skills_data_analysis_desc: "Power BI, DAX, Excel, SQL, Extração e Visualização de Dados.",
+                skills_languages_title: "Linguagens & Ferramentas",
+                skills_languages_desc: "Python, C, C# e Java.",
+                experience_title: "Formação e Experiência",
+                education_degree: "Ciências da Computação",
+                education_university: "Universidade Cátolica de Santos [Unisantos]",
+                education_completed: "Graduação concluída em junho 2025",
+                education_research: "Projeto Científico - Estudante Pesquisador focado em Análise de Dados.",
+                work_date: "Fevereiro 2019 - Março 2025",
+                work_role: "Assistente de Sistemas de informação",
+                work_company: "MSC Mediterranean Shipping do Brasil",
+                work_desc_1: "Time França - Exportação França.",
+                work_desc_2: "Confecção, Auditoria e Correção de BL (Bill of Lading).",
+                work_desc_3: "Desenvolvimento de Relatórios e análise de erros.",
+                projects_title: "Meus Projetos",
+                project1_title: "DevOps - Automação de Deploy com Docker e Google Cloud",
+                project1_desc: "Responsável por criar e configurar uma <strong>pipeline de deploy</strong> para uma aplicação Python. O projeto envolveu a criação de um <strong>Dockerfile otimizado</strong> e a automação do ciclo de <strong>CI/CD</strong> com <strong>GitHub Actions</strong> para implantação na plataforma serverless <strong>Google Cloud Run</strong>, demonstrando habilidades práticas em <strong>conteinerização</strong>, <strong>automação</strong> e <strong>computação em nuvem</strong>.",
+                view_github: "Ver no GitHub &rarr;",
+                project2_title: "Análise de Padrões e Tendência da Indústria de Jogos",
+                project2_desc: "Este projeto de <strong>Processamento de Linguagem Natural (NLP)</strong> e <strong>Machine Learning</strong> teve como objetivo analisar e identificar padrões nos resumos de jogos da plataforma <strong>Metacritic</strong>. Utilizando técnicas como <strong>TF-IDF</strong> para vetorização de texto e o algoritmo <strong>K-means</strong> para clusterização, o estudo agrupou jogos com base em semelhanças linguísticas, revelando uma forte correlação entre a linguagem dos resumos e os gêneros dos jogos. A análise final demonstrou como descrições estrategicamente elaboradas podem impactar positivamente a percepção crítica e o desempenho comercial dos títulos.",
+                view_report: "Ver Relatório Completo &rarr;",
+                project3_title: "Análise de Dados Netflix",
+                project3_desc: "Dashboard interativo para análise do catálogo da Netflix, desenvolvido com <strong>Power BI</strong>. O painel explora gêneros, tendências e distribuição de títulos ao longo do tempo.",
+                view_dashboard: "Ver Dashboard &rarr;",
+                contact_title: "Vamos Conversar!",
+                contact_subtitle: "Estou aberto a novas oportunidades e adoro trocar ideias. <br>Sinta-se à vontade para entrar em contato.",
+                footer_text: "Desenvolvido por João Matheus. © 2025"
+            },
+            en: {
+                nav_projects: "Projects",
+                nav_contact: "Contact",
+                hero_greeting: "Hello, I'm João Matheus!",
+                hero_job_title: "Computer Scientist",
+                hero_bio: "I am a recent Computer Science graduate, passionate about technology and problem-solving. I am looking for an opportunity that allows me to apply my knowledge in software development and data analysis while continuing to improve through practical experience.",
+                hero_button_cv: "Download CV",
+                skills_title: "Core Competencies",
+                skills_data_analysis_title: "Data Analysis",
+                skills_data_analysis_desc: "Power BI, DAX, Excel, SQL, Data Extraction and Visualization.",
+                skills_languages_title: "Languages & Tools",
+                skills_languages_desc: "Python, C, C#, and Java.",
+                experience_title: "Education and Experience",
+                education_degree: "Computer Science",
+                education_university: "Catholic University of Santos [Unisantos]",
+                education_completed: "Graduation completed in June 2025",
+                education_research: "Scientific Project - Student Researcher focused on Data Analysis.",
+                work_date: "February 2019 - March 2025",
+                work_role: "Information Systems Assistant",
+                work_company: "MSC Mediterranean Shipping of Brazil",
+                work_desc_1: "France Team - France Export.",
+                work_desc_2: "Drafting, Auditing, and Correcting Bill of Lading (BL).",
+                work_desc_3: "Developing reports and analyzing errors.",
+                projects_title: "My Projects",
+                project1_title: "DevOps - Deploy Automation with Docker and Google Cloud",
+                project1_desc: "Responsible for creating and configuring a <strong>deploy pipeline</strong> for a Python application. The project involved creating an <strong>optimized Dockerfile</strong> and automating the <strong>CI/CD</strong> cycle with <strong>GitHub Actions</strong> for deployment on the <strong>Google Cloud Run</strong> serverless platform, demonstrating practical skills in <strong>containerization</strong>, <strong>automation</strong>, and <strong>cloud computing</strong>.",
+                view_github: "View on GitHub &rarr;",
+                project2_title: "Analysis of Patterns and Trends in the Gaming Industry",
+                project2_desc: "This <strong>Natural Language Processing (NLP)</strong> and <strong>Machine Learning</strong> project aimed to analyze and identify patterns in game summaries from the <strong>Metacritic</strong> platform. Using techniques like <strong>TF-IDF</strong> for text vectorization and the <strong>K-means</strong> algorithm for clustering, the study grouped games based on linguistic similarities, revealing a strong correlation between the language of the summaries and the game genres. The final analysis showed how strategically crafted descriptions can positively impact the critical perception and commercial performance of titles.",
+                view_report: "View Full Report &rarr;",
+                project3_title: "Netflix Data Analysis",
+                project3_desc: "Interactive dashboard for analyzing the Netflix catalog, developed with <strong>Power BI</strong>. The panel explores genres, trends, and the distribution of titles over time.",
+                view_dashboard: "View Dashboard &rarr;",
+                contact_title: "Let's Talk!",
+                contact_subtitle: "I'm open to new opportunities and love to exchange ideas. <br>Feel free to get in touch.",
+                footer_text: "Developed by João Matheus. © 2025"
+            }
+        };
+
+        const setLanguage = (lang) => {
+            // Salva o idioma no localStorage
+            localStorage.setItem('language', lang);
+
+            // Seleciona todos os elementos que precisam de tradução
+            const elements = document.querySelectorAll('[data-translate-key]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-translate-key');
+                if (translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+            
+            // Atualiza o estilo dos botões de idioma
+            document.getElementById('btn-pt').classList.toggle('active', lang === 'pt');
+            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+            
+            // Atualiza o atributo lang da tag <html>
+            document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+        };
+
+        // Roda a função quando a página é carregada
+        document.addEventListener('DOMContentLoaded', () => {
+            // Pega o idioma salvo ou usa 'pt' como padrão
+            const currentLang = localStorage.getItem('language') || 'pt';
+            setLanguage(currentLang);
+        });
+
+    </script>
 </body>
 </html>
