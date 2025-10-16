@@ -75,7 +75,7 @@
                     Sou recém-formado em Ciências da Computação, apaixonado por tecnologia e resolução de problemas. Busco uma oportunidade que me permita aplicar meus conhecimentos em desenvolvimento de software e análise de dados, ao mesmo tempo em que continuo me aprimorando por meio de experiências práticas.
                 </p>
                  <div class="mt-6 flex justify-center md:justify-start space-x-3">
-                     <a href="assets/Moderno-Atualizado.pdf" download class="px-6 py-3 bg-[var(--cor-primaria)] text-[var(--texto-botao-primario)] rounded-md hover:bg-[var(--cor-primaria-hover)] shadow-lg" data-translate-key="hero_button_cv">Baixar CV</a>
+                     <a id="cv-download-link" href="assets/Moderno-Atualizado.pdf" download class="px-6 py-3 bg-[var(--cor-primaria)] text-[var(--texto-botao-primario)] rounded-md hover:bg-[var(--cor-primaria-hover)] shadow-lg" data-translate-key="hero_button_cv">Baixar CV</a>
                  </div>
             </div>
         </section>
@@ -190,111 +190,115 @@
     </footer>
 
     <script>
-        const translations = {
-            pt: {
-                nav_projects: "Projetos",
-                nav_contact: "Contato",
-                hero_greeting: "Olá, sou o João Matheus!",
-                hero_job_title: "Cientista da Computação",
-                hero_bio: "Sou recém-formado em Ciências da Computação, apaixonado por tecnologia e resolução de problemas. Busco uma oportunidade que me permita aplicar meus conhecimentos em desenvolvimento de software e análise de dados, ao mesmo tempo em que continuo me aprimorando por meio de experiências práticas.",
-                hero_button_cv: "Baixar CV",
-                skills_title: "Principais Competências",
-                skills_data_analysis_title: "Análise de Dados",
-                skills_data_analysis_desc: "Power BI, DAX, Excel, SQL, Extração e Visualização de Dados.",
-                skills_languages_title: "Linguagens & Ferramentas",
-                skills_languages_desc: "Python, C, C# e Java.",
-                experience_title: "Formação e Experiência",
-                education_degree: "Ciências da Computação",
-                education_university: "Universidade Cátolica de Santos [Unisantos]",
-                education_completed: "Graduação concluída em junho 2025",
-                education_research: "Projeto Científico - Estudante Pesquisador focado em Análise de Dados.",
-                work_date: "Fevereiro 2019 - Março 2025",
-                work_role: "Assistente de Sistemas de informação",
-                work_company: "MSC Mediterranean Shipping do Brasil",
-                work_desc_1: "Time França - Exportação França.",
-                work_desc_2: "Confecção, Auditoria e Correção de BL (Bill of Lading).",
-                work_desc_3: "Desenvolvimento de Relatórios e análise de erros.",
-                projects_title: "Meus Projetos",
-                project1_title: "DevOps - Automação de Deploy com Docker e Google Cloud",
-                project1_desc: "Responsável por criar e configurar uma <strong>pipeline de deploy</strong> para uma aplicação Python. O projeto envolveu a criação de um <strong>Dockerfile otimizado</strong> e a automação do ciclo de <strong>CI/CD</strong> com <strong>GitHub Actions</strong> para implantação na plataforma serverless <strong>Google Cloud Run</strong>, demonstrando habilidades práticas em <strong>conteinerização</strong>, <strong>automação</strong> e <strong>computação em nuvem</strong>.",
-                view_github: "Ver no GitHub &rarr;",
-                project2_title: "Análise de Padrões e Tendência da Indústria de Jogos",
-                project2_desc: "Este projeto de <strong>Processamento de Linguagem Natural (NLP)</strong> e <strong>Machine Learning</strong> teve como objetivo analisar e identificar padrões nos resumos de jogos da plataforma <strong>Metacritic</strong>. Utilizando técnicas como <strong>TF-IDF</strong> para vetorização de texto e o algoritmo <strong>K-means</strong> para clusterização, o estudo agrupou jogos com base em semelhanças linguísticas, revelando uma forte correlação entre a linguagem dos resumos e os gêneros dos jogos. A análise final demonstrou como descrições estrategicamente elaboradas podem impactar positivamente a percepção crítica e o desempenho comercial dos títulos.",
-                view_report: "Ver Relatório Completo &rarr;",
-                project3_title: "Análise de Dados Netflix",
-                project3_desc: "Dashboard interativo para análise do catálogo da Netflix, desenvolvido com <strong>Power BI</strong>. O painel explora gêneros, tendências e distribuição de títulos ao longo do tempo.",
-                view_dashboard: "Ver Dashboard &rarr;",
-                contact_title: "Vamos Conversar!",
-                contact_subtitle: "Estou aberto a novas oportunidades e adoro trocar ideias. <br>Sinta-se à vontade para entrar em contato.",
-                footer_text: "Desenvolvido por João Matheus. © 2025"
-            },
-            en: {
-                nav_projects: "Projects",
-                nav_contact: "Contact",
-                hero_greeting: "Hello, I'm João Matheus!",
-                hero_job_title: "Computer Scientist",
-                hero_bio: "I am a recent Computer Science graduate, passionate about technology and problem-solving. I am looking for an opportunity that allows me to apply my knowledge in software development and data analysis while continuing to improve through practical experience.",
-                hero_button_cv: "Download CV",
-                skills_title: "Core Competencies",
-                skills_data_analysis_title: "Data Analysis",
-                skills_data_analysis_desc: "Power BI, DAX, Excel, SQL, Data Extraction and Visualization.",
-                skills_languages_title: "Languages & Tools",
-                skills_languages_desc: "Python, C, C#, and Java.",
-                experience_title: "Education and Experience",
-                education_degree: "Computer Science",
-                education_university: "Catholic University of Santos [Unisantos]",
-                education_completed: "Graduation completed in June 2025",
-                education_research: "Scientific Project - Student Researcher focused on Data Analysis.",
-                work_date: "February 2019 - March 2025",
-                work_role: "Information Systems Assistant",
-                work_company: "MSC Mediterranean Shipping of Brazil",
-                work_desc_1: "France Team - France Export.",
-                work_desc_2: "Drafting, Auditing, and Correcting Bill of Lading (BL).",
-                work_desc_3: "Developing reports and analyzing errors.",
-                projects_title: "My Projects",
-                project1_title: "DevOps - Deploy Automation with Docker and Google Cloud",
-                project1_desc: "Responsible for creating and configuring a <strong>deploy pipeline</strong> for a Python application. The project involved creating an <strong>optimized Dockerfile</strong> and automating the <strong>CI/CD</strong> cycle with <strong>GitHub Actions</strong> for deployment on the <strong>Google Cloud Run</strong> serverless platform, demonstrating practical skills in <strong>containerization</strong>, <strong>automation</strong>, and <strong>cloud computing</strong>.",
-                view_github: "View on GitHub &rarr;",
-                project2_title: "Analysis of Patterns and Trends in the Gaming Industry",
-                project2_desc: "This <strong>Natural Language Processing (NLP)</strong> and <strong>Machine Learning</strong> project aimed to analyze and identify patterns in game summaries from the <strong>Metacritic</strong> platform. Using techniques like <strong>TF-IDF</strong> for text vectorization and the <strong>K-means</strong> algorithm for clustering, the study grouped games based on linguistic similarities, revealing a strong correlation between the language of the summaries and the game genres. The final analysis showed how strategically crafted descriptions can positively impact the critical perception and commercial performance of titles.",
-                view_report: "View Full Report &rarr;",
-                project3_title: "Netflix Data Analysis",
-                project3_desc: "Interactive dashboard for analyzing the Netflix catalog, developed with <strong>Power BI</strong>. The panel explores genres, trends, and the distribution of titles over time.",
-                view_dashboard: "View Dashboard &rarr;",
-                contact_title: "Let's Talk!",
-                contact_subtitle: "I'm open to new opportunities and love to exchange ideas. <br>Feel free to get in touch.",
-                footer_text: "Developed by João Matheus. © 2025"
+        <script>
+    const translations = {
+        pt: {
+            nav_projects: "Projetos",
+            nav_contact: "Contato",
+            hero_greeting: "Olá, sou o João Matheus!",
+            hero_job_title: "Cientista da Computação",
+            hero_bio: "Sou recém-formado em Ciências da Computação, apaixonado por tecnologia e resolução de problemas. Busco uma oportunidade que me permita aplicar meus conhecimentos em desenvolvimento de software e análise de dados, ao mesmo tempo em que continuo me aprimorando por meio de experiências práticas.",
+            hero_button_cv: "Baixar CV",
+            skills_title: "Principais Competências",
+            skills_data_analysis_title: "Análise de Dados",
+            skills_data_analysis_desc: "Power BI, DAX, Excel, SQL, Extração e Visualização de Dados.",
+            skills_languages_title: "Linguagens & Ferramentas",
+            skills_languages_desc: "Python, C, C# e Java.",
+            experience_title: "Formação e Experiência",
+            education_degree: "Ciências da Computação",
+            education_university: "Universidade Cátolica de Santos [Unisantos]",
+            education_completed: "Graduação concluída em junho 2025",
+            education_research: "Projeto Científico - Estudante Pesquisador focado em Análise de Dados.",
+            work_date: "Fevereiro 2019 - Março 2025",
+            work_role: "Assistente de Sistemas de informação",
+            work_company: "MSC Mediterranean Shipping do Brasil",
+            work_desc_1: "Time França - Exportação França.",
+            work_desc_2: "Confecção, Auditoria e Correção de BL (Bill of Lading).",
+            work_desc_3: "Desenvolvimento de Relatórios e análise de erros.",
+            projects_title: "Meus Projetos",
+            project1_title: "DevOps - Automação de Deploy com Docker e Google Cloud",
+            project1_desc: "Responsável por criar e configurar uma <strong>pipeline de deploy</strong> para uma aplicação Python. O projeto envolveu a criação de um <strong>Dockerfile otimizado</strong> e a automação do ciclo de <strong>CI/CD</strong> com <strong>GitHub Actions</strong> para implantação na plataforma serverless <strong>Google Cloud Run</strong>, demonstrando habilidades práticas em <strong>conteinerização</strong>, <strong>automação</strong> e <strong>computação em nuvem</strong>.",
+            view_github: "Ver no GitHub &rarr;",
+            project2_title: "Análise de Padrões e Tendência da Indústria de Jogos",
+            project2_desc: "Este projeto de <strong>Processamento de Linguagem Natural (NLP)</strong> e <strong>Machine Learning</strong> teve como objetivo analisar e identificar padrões nos resumos de jogos da plataforma <strong>Metacritic</strong>. Utilizando técnicas como <strong>TF-IDF</strong> para vetorização de texto e o algoritmo <strong>K-means</strong> para clusterização, o estudo agrupou jogos com base em semelhanças linguísticas, revelando uma forte correlação entre a linguagem dos resumos e os gêneros dos jogos. A análise final demonstrou como descrições estrategicamente elaboradas podem impactar positivamente a percepção crítica e o desempenho comercial dos títulos.",
+            view_report: "Ver Relatório Completo &rarr;",
+            project3_title: "Análise de Dados Netflix",
+            project3_desc: "Dashboard interativo para análise do catálogo da Netflix, desenvolvido com <strong>Power BI</strong>. O painel explora gêneros, tendências e distribuição de títulos ao longo do tempo.",
+            view_dashboard: "Ver Dashboard &rarr;",
+            contact_title: "Vamos Conversar!",
+            contact_subtitle: "Estou aberto a novas oportunidades e adoro trocar ideias. <br>Sinta-se à vontade para entrar em contato.",
+            footer_text: "Desenvolvido por João Matheus. © 2025"
+        },
+        en: {
+            nav_projects: "Projects",
+            nav_contact: "Contact",
+            hero_greeting: "Hello, I'm João Matheus!",
+            hero_job_title: "Computer Scientist",
+            hero_bio: "I am a recent Computer Science graduate, passionate about technology and problem-solving. I am looking for an opportunity that allows me to apply my knowledge in software development and data analysis while continuing to improve through practical experience.",
+            hero_button_cv: "Download CV",
+            skills_title: "Core Competencies",
+            skills_data_analysis_title: "Data Analysis",
+            skills_data_analysis_desc: "Power BI, DAX, Excel, SQL, Data Extraction and Visualization.",
+            skills_languages_title: "Languages & Tools",
+            skills_languages_desc: "Python, C, C#, and Java.",
+            experience_title: "Education and Experience",
+            education_degree: "Computer Science",
+            education_university: "Catholic University of Santos [Unisantos]",
+            education_completed: "Graduation completed in June 2025",
+            education_research: "Scientific Project - Student Researcher focused on Data Analysis.",
+            work_date: "February 2019 - March 2025",
+            work_role: "Information Systems Assistant",
+            work_company: "MSC Mediterranean Shipping of Brazil",
+            work_desc_1: "France Team - France Export.",
+            work_desc_2: "Drafting, Auditing, and Correcting Bill of Lading (BL).",
+            work_desc_3: "Developing reports and analyzing errors.",
+            projects_title: "My Projects",
+            project1_title: "DevOps - Deploy Automation with Docker and Google Cloud",
+            project1_desc: "Responsible for creating and configuring a <strong>deploy pipeline</strong> for a Python application. The project involved creating an <strong>optimized Dockerfile</strong> and automating the <strong>CI/CD</strong> cycle with <strong>GitHub Actions</strong> for deployment on the <strong>Google Cloud Run</strong> serverless platform, demonstrating practical skills in <strong>containerization</strong>, <strong>automation</strong>, and <strong>cloud computing</strong>.",
+            view_github: "View on GitHub &rarr;",
+            project2_title: "Analysis of Patterns and Trends in the Gaming Industry",
+            project2_desc: "This <strong>Natural Language Processing (NLP)</strong> and <strong>Machine Learning</strong> project aimed to analyze and identify patterns in game summaries from the <strong>Metacritic</strong> platform. Using techniques like <strong>TF-IDF</strong> for text vectorization and the <strong>K-means</strong> algorithm for clustering, the study grouped games based on linguistic similarities, revealing a strong correlation between the language of the summaries and the game genres. The final analysis showed how strategically crafted descriptions can positively impact the critical perception and commercial performance of titles.",
+            view_report: "View Full Report &rarr;",
+            project3_title: "Netflix Data Analysis",
+            project3_desc: "Interactive dashboard for analyzing the Netflix catalog, developed with <strong>Power BI</strong>. The panel explores genres, trends, and the distribution of titles over time.",
+            view_dashboard: "View Dashboard &rarr;",
+            contact_title: "Let's Talk!",
+            contact_subtitle: "I'm open to new opportunities and love to exchange ideas. <br>Feel free to get in touch.",
+            footer_text: "Developed by João Matheus. © 2025"
+        }
+    };
+
+    const setLanguage = (lang) => {
+        localStorage.setItem('language', lang);
+
+        const elements = document.querySelectorAll('[data-translate-key]');
+        elements.forEach(el => {
+            const key = el.getAttribute('data-translate-key');
+            if (translations[lang][key]) {
+                el.innerHTML = translations[lang][key];
             }
-        };
-
-        const setLanguage = (lang) => {
-            // Salva o idioma no localStorage
-            localStorage.setItem('language', lang);
-
-            // Seleciona todos os elementos que precisam de tradução
-            const elements = document.querySelectorAll('[data-translate-key]');
-            elements.forEach(el => {
-                const key = el.getAttribute('data-translate-key');
-                if (translations[lang][key]) {
-                    el.innerHTML = translations[lang][key];
-                }
-            });
-            
-            // Atualiza o estilo dos botões de idioma
-            document.getElementById('btn-pt').classList.toggle('active', lang === 'pt');
-            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-            
-            // Atualiza o atributo lang da tag <html>
-            document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
-        };
-
-        // Roda a função quando a página é carregada
-        document.addEventListener('DOMContentLoaded', () => {
-            // Pega o idioma salvo ou usa 'pt' como padrão
-            const currentLang = localStorage.getItem('language') || 'pt';
-            setLanguage(currentLang);
         });
 
-    </script>
+        const cvLink = document.getElementById('cv-download-link');
+        if (lang === 'en') {
+            // Se o idioma for inglês, aponta para o CV em inglês
+            cvLink.href = 'assets/CV-EN.pdf'; 
+        } else {
+            
+            cvLink.href = 'assets/Moderno-Atualizado.pdf';
+        }
+        // --- FIM DA NOVA PARTE ---
+
+        document.getElementById('btn-pt').classList.toggle('active', lang === 'pt');
+        document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+        
+        document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const currentLang = localStorage.getItem('language') || 'pt';
+        setLanguage(currentLang);
+    });
+</script>
 </body>
 </html>
