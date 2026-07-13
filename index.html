@@ -7,6 +7,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <!-- Estilos da biblioteca AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         /* Estilo para o botão de idioma ativo */
         .lang-btn.active {
@@ -64,11 +66,14 @@
     </header>
 
     <main class="max-w-5xl mx-auto p-6 pt-24 space-y-20">
-        <section id="home" class="flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-12">
-            <div class="w-48 h-48 md:w-60 md:h-60 flex-shrink-0">
+       <section id="home" class="flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-12">
+            <!-- Foto surge da esquerda -->
+            <div class="w-48 h-48 md:w-60 md:h-60 flex-shrink-0" data-aos="fade-right">
                 <img src="assets/minha-foto.png" alt="Foto de João Matheus" class="rounded-full object-cover w-full h-full shadow-lg">
             </div>
-            <div class="text-center md:text-left">
+            
+            <!-- Texto e botão surgem da direita -->
+            <div class="text-center md:text-left" data-aos="fade-left">
                 <h1 class="text-4xl md:text-5xl font-bold mb-2" data-translate-key="hero_greeting">Olá, sou o João Matheus!</h1>
                 <p class="text-xl text-[var(--cor-primaria)] font-medium mb-4" data-translate-key="hero_job_title">Cientista da Computação</p>
                 <p class="text-lg text-[var(--texto-secundario)] max-w-2xl" data-translate-key="hero_bio">
@@ -81,17 +86,20 @@
         </section>
 
         <section id="skills">
-            <h2 class="text-3xl font-bold text-center mb-12" data-translate-key="skills_title">Principais Competências</h2>
+            <h2 class="text-3xl font-bold text-center mb-12" data-translate-key="skills_title" data-aos="fade-up">Principais Competências</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
-                <div class="bg-[var(--fundo-secundario)] p-6 rounded-lg shadow-lg border border-[var(--cor-borda)]">
+                <!-- Primeiro card surge de baixo -->
+                <div class="bg-[var(--fundo-secundario)] p-6 rounded-lg shadow-lg border border-[var(--cor-borda)]" data-aos="fade-up">
                     <i class="fas fa-chart-pie fa-2x text-[var(--cor-primaria)] mb-4"></i>
                     <h3 class="text-xl font-bold mb-2" data-translate-key="skills_data_analysis_title">Análise de Dados</h3>
                     <p class="text-[var(--texto-secundario)]" data-translate-key="skills_data_analysis_desc">Power BI, DAX, Excel, SQL, Extração e Visualização de Dados.</p>
                 </div>
-                <div class="bg-[var(--fundo-secundario)] p-6 rounded-lg shadow-lg border border-[var(--cor-borda)]">
+                
+                <!-- Segundo card surge de baixo com 150ms de atraso -->
+                <div class="bg-[var(--fundo-secundario)] p-6 rounded-lg shadow-lg border border-[var(--cor-borda)]" data-aos="fade-up" data-aos-delay="150">
                     <i class="fas fa-code fa-2x text-[var(--cor-primaria)] mb-4"></i>
                     <h3 class="text-xl font-bold mb-2" data-translate-key="skills_languages_title">Linguagens & Ferramentas</h3>
-                    <p class="text-[var(--texto-secundario)]" data-translate-key="skills_languages_desc">Python, C e Java.</p>
+                    <p class="text-[var(--texto-secundario)]" data-translate-key="skills_languages_desc">Python, C e SQL.</p>
                 </div>
             </div>
         </section>
@@ -136,11 +144,12 @@
             </div>
         </section>
         
-        <section id="projects">
-            <h2 class="text-3xl font-bold text-center mb-12" data-translate-key="projects_title">Meus Projetos</h2>
+      <section id="projects">
+            <h2 class="text-3xl font-bold text-center mb-12" data-translate-key="projects_title" data-aos="fade-up">Meus Projetos</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                
-                <div class="bg-[var(--fundo-secundario)] p-6 rounded-lg shadow-lg border border-[var(--cor-borda)]">
+                <!-- Projeto 1 (Surge primeiro) -->
+                <div class="bg-[var(--fundo-secundario)] p-6 rounded-lg shadow-lg border border-[var(--cor-borda)]" data-aos="fade-up">
                     <h3 class="text-2xl font-bold mb-3" data-translate-key="project1_title">DevOps - Automação de Deploy com Docker e Google Cloud</h3>
                     <p class="mb-4 text-[var(--texto-secundario)]" data-translate-key="project1_desc">Responsável por criar e configurar uma <strong>pipeline de deploy</strong> para uma aplicação Python. O projeto envolveu a criação de um <strong>Dockerfile otimizado</strong> e a automação do ciclo de <strong>CI/CD</strong> com <strong>GitHub Actions</strong> para implantação na plataforma serverless <strong>Google Cloud Run</strong>, demonstrando habilidades práticas em <strong>conteinerização</strong>, <strong>automação</strong> e <strong>computação em nuvem</strong>.</p>
                     <div class="flex flex-wrap gap-2 mb-4">
@@ -152,7 +161,8 @@
                     <a href="https://github.com/Joaomatheus360/imersao-devops-api" target="_blank" class="font-semibold text-[var(--cor-primaria)] hover:text-[var(--cor-primaria-hover)] hover:underline" data-translate-key="view_github">Ver no GitHub &rarr;</a>
                 </div>
 
-                <div class="bg-[var(--fundo-secundario)] p-6 rounded-lg shadow-lg border border-[var(--cor-borda)]">
+                <!-- Projeto 2 (Surge com 100ms de delay) -->
+                <div class="bg-[var(--fundo-secundario)] p-6 rounded-lg shadow-lg border border-[var(--cor-borda)]" data-aos="fade-up" data-aos-delay="100">
                     <h3 class="text-2xl font-bold mb-3" data-translate-key="project2_title">Análise de Padrões e Tendência da Indústria de Jogos</h3>
                     <p class="mb-4 text-[var(--texto-secundario)]" data-translate-key="project2_desc">
                         Este projeto de <strong>Processamento de Linguagem Natural (NLP)</strong> e <strong>Machine Learning</strong> teve como objetivo analisar e identificar padrões nos resumos de jogos da plataforma <strong>Metacritic</strong>. Utilizando técnicas como <strong>TF-IDF</strong> para vetorização de texto e o algoritmo <strong>K-means</strong> para clusterização, o estudo agrupou jogos com base em semelhanças linguísticas, revelando uma forte correlação entre a linguagem dos resumos e os gêneros dos jogos. A análise final demonstrou como descrições estrategicamente elaboradas podem impactar positivamente a percepção crítica e o desempenho comercial dos títulos.
@@ -166,7 +176,8 @@
                     <a href="assets/Relatório de Pesquisa EP.pdf" target="_blank" class="font-semibold text-[var(--cor-primaria)] hover:text-[var(--cor-primaria-hover)] hover:underline" data-translate-key="view_report">Ver Relatório Completo &rarr;</a>
                 </div>
 
-                <div class="bg-[var(--fundo-secundario)] p-6 rounded-lg shadow-lg border border-[var(--cor-borda)]">
+                <!-- Projeto 3 (Surge com 200ms de delay) -->
+                <div class="bg-[var(--fundo-secundario)] p-6 rounded-lg shadow-lg border border-[var(--cor-borda)]" data-aos="fade-up" data-aos-delay="200">
                     <h3 class="text-2xl font-bold mb-3" data-translate-key="project3_title">Análise de Dados Netflix</h3>
                     <p class="mb-4 text-[var(--texto-secundario)]" data-translate-key="project3_desc">Dashboard interativo para análise do catálogo da Netflix, desenvolvido com <strong>Power BI</strong>. O painel explora gêneros, tendências e distribuição de títulos ao longo do tempo.</p>
                     <div class="flex flex-wrap gap-2 mb-4">
@@ -180,7 +191,6 @@
                
             </div>
         </section>
-
         <section id="contact" class="text-center">
             <h2 class="text-3xl font-bold mb-4" data-translate-key="contact_title">Vamos Conversar!</h2>
             <p class="text-lg text-[var(--texto-secundario)] mb-8" data-translate-key="contact_subtitle">Estou aberto a novas oportunidades e adoro trocar ideias. <br>Sinta-se à vontade para entrar em contato.</p>
@@ -323,5 +333,15 @@
         setLanguage(currentLang);
     });
 </script>
+    <!-- Script da biblioteca AOS e inicialização -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Inicializa as animações com configurações padrão equilibradas
+        AOS.init({
+            duration: 800, // Duração da animação em milissegundos (0.8 segundos)
+            once: true,    // Executa a animação apenas uma vez ao rolar a página
+            offset: 120    // Inicia a animação 120px antes do elemento aparecer totalmente
+        });
+    </script>
 </body>
 </html>
