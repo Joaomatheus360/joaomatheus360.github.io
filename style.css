@@ -66,3 +66,8 @@ body {
 * {
   transition: color 0.3s ease, background-color 0.3s ease;
 }
+
+/* Garante que as propriedades de animação da AOS não sofram interferência do seletor universal */
+[data-aos] {
+  transition-property: opacity, transform !important;
+}
